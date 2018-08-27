@@ -8,7 +8,8 @@ def homepage():
 
     return """
 	<link rel="stylesheet" type="text/css" href="/styles.css">
-    <h1>nomina18</h1>
+	<title>NOMINA18</title>
+    <center><h1 id="tit">NOMINA18</h1></center>
     <p>It is currently {time}. hola Isabel</p>
 
     <img src="http://loremflickr.com/600/400" />
