@@ -17,7 +17,7 @@ def homepage():
 
 	<div id="box recive"></div>	
 	<div id="box send"></div>
-    <img src="http://loremflickr.com/600/400" />
+	<center><img src="http://loremflickr.com/600/400" /></center>
 	<bottom>
 	<p>It is currently {time}.</p>
 	</bottom>
@@ -39,8 +39,8 @@ def styles():
 	}
    
     #recive{
-		width: 40px;
-		height: 40px;
+		width: 100px;
+		height: 200px;
 		background-color: white;
 	}
     
