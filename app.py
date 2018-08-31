@@ -10,6 +10,10 @@ def homepage():
 	<link rel="stylesheet" type="text/css" href="/styles.css">
 	<title>NOMINA18</title>
     <center><h1 id="tit">NOMINA18</h1></center>
+
+    <p>Welcome to the Qchat</p>
+	<br>
+	<br>
     <p>It is currently {time}. hola Isabel</p>
 
     <img src="http://loremflickr.com/600/400" />
@@ -20,8 +24,13 @@ def styles():
 
     return """
     body{
-		background-color:red;
+		background-color:black;
+		
 	}
+
+    title{
+		color: grey;
+	}	
     """
 
 
