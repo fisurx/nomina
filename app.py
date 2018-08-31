@@ -14,9 +14,14 @@ def homepage():
     <p>Welcome to the Qchat</p>
 	<br>
 	<br>
-    <p>It is currently {time}. hola Isabel</p>
 
+	<div id="box recive"></div>	
+	<div id="box send"></div>
     <img src="http://loremflickr.com/600/400" />
+	<bottom>
+	<p>It is currently {time}.</p>
+	</bottom>
+
     """.format(time=the_time)
 
 @app.route('/styles.css')
@@ -31,7 +36,14 @@ def styles():
 
     title{
 		color: #FEFEFE;
-	}	
+	}
+   
+    #recive{
+		width: 40px;
+		height: 40px;
+		background-color: white;
+	}
+    
     """
 
 
