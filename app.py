@@ -15,11 +15,14 @@ def homepage():
 	<br>
 	<br>
 
-	<div id="box recive"></div>	
-	<div id="box send"></div>
-	<center><img src="http://loremflickr.com/600/400" /></center>
+	<center>
+		<div class="receive chat"></div>	
+		<div class="send chat"></div>
+		<img src="http://loremflickr.com/200/300" />
+	</center>
+
 	<bottom>
-	<p>It is currently {time}.</p>
+		<p>It is currently {time}.</p>
 	</bottom>
 
     """.format(time=the_time)
@@ -38,12 +41,27 @@ def styles():
 		color: #FEFEFE;
 	}
    
-    #recive{
+	.receive{
 		width: 300px;
-		height: 200px;
+		height: 400px;
+		background-color: white;
+		border-raid
+	}
+	
+	.send{
+		margin-top: 10px;
+		width: 300px;
+		height: 100px;
 		background-color: white;
 	}
     
+	.chat{
+		border-top: 7px;
+		border-left: 7px;
+		border-right: 7px;
+		border-bottom:7px;
+		border-color: green;
+	}
     """
 
 
