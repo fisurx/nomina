@@ -39,7 +39,7 @@ def styles():
 	}
    
     #recive{
-		width: 200px;
+		width: 300px;
 		height: 200px;
 		background-color: white;
 	}
