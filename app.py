@@ -10,6 +10,7 @@ def homepage():
 	time = datetime.now().strftime("%l:%M %p")
 	messages.append({'nick':nick, 'message':message, 'time':time})
 	print (messages)
+
 	
 
 	the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
