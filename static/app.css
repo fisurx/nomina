@@ -1,0 +1,42 @@
+body{
+	background-color:black;
+	color:white;
+	
+}
+
+title{
+	color: #FEFEFE;
+}
+
+.receive{
+	width: 300px;
+	height: 200px;
+	background-color: white;
+	color: black;
+}
+
+.send{
+	margin-top: 10px;
+	width: 300px;
+	height: 50px;
+	background-color: white;
+}
+
+.chat{
+	border: 5px solid;
+	border-radius: 5px;		
+	border-color: #01A9DB;
+}
+
+input{
+	border:none;
+	height:50;
+	width:300px;	
+	text-indent: 10px;	
+}
+
+
+input:focus{
+	border-color:#424242;
+}
+

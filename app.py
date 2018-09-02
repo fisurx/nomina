@@ -1,84 +1,44 @@
-from flask import Flask
+from flask import Flask, request
 from datetime import datetime
 app = Flask(__name__)
+messages = []
 
 @app.route('/')
 def homepage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
-
-    return """
-	<link rel="stylesheet" type="text/css" href="/styles.css">
-	<title>NOMINA18</title>
-    <center>
-		<h1>NOMINA18</h1>
-		<p><b>Welcome to the Qchat</b></p>
-		<br>
-		<br>
-
+	nick = request.args.get('nick')
+	message = request.args.get('message')
+	time = datetime.now().strftime("%l:%M %p")
+	messages.append({'nick':nick, 'message':message, 'time':time})
+	print (messages)
 	
-		<form>
-			<div class="receive chat"></div>	
-			<div class="send chat">
-			<input type="text" class="form-control" name="message" id="msj" placeholder="especta o participa">
-			</div>
-			<br>
-			<img src="http://loremflickr.com/200/300" />
-		</form>
-	</center>
 
-	<bottom>
-		<p>It is currently {time}.</p>
-	</bottom>
-
-    """.format(time=the_time)
+	the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
+	with open('./static/app.html','r') as f:
+		return f.read().format(time=the_time, chat=getPrettyChat(), nick=nick)
 
 @app.route('/styles.css')
 def styles():
 
-    return """
-    body{
-		background-color:black;
-		color:white;
-		
-	}
+	with open('./static/app.css','r') as f:
+		return f.read()
 
-    title{
-		color: #FEFEFE;
-	}
-   
-	.receive{
-		width: 300px;
-		height: 400px;
-		background-color: white;
-		border-raid
-	}
+@app.route('/api/chat/message')
+def addMessage():
+	nick = request.args.get('nick')
+	message = request.args.get('message')
+	time = datetime.now().strftime("%l:%M %p")
+	messages.append({'nick':nick, 'message':message, 'time':time})
+	print (messages)
 	
-	.send{
-		margin-top: 10px;
-		width: 300px;
-		height: 50px;
-		background-color: white;
-	}
-    
-	.chat{
-		border: 5px solid;
-		border-radius: 5px;		
-		border-color: #01A9DB;
-	}
-	
-	input{
-		border:none;
-		height:50;
-		width:300px;	
-	}
-	
+	return "ok" 
 
-	input:focus{
-		border-color:#424242;
-	}
-    """
+def getPrettyChat():
+	chat=''
+	for message in messages:
+		chat += '[%s]  %s dice: %s\n' %(message["time"], message["nick"], message["message"])
+	return chat
 
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
+	app.run(debug=True, use_reloader=True)
 
