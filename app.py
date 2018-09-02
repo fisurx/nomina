@@ -9,16 +9,21 @@ def homepage():
     return """
 	<link rel="stylesheet" type="text/css" href="/styles.css">
 	<title>NOMINA18</title>
-    <center><h1 id="tit">NOMINA18</h1></center>
+    <center>
+		<h1>NOMINA18</h1>
+		<p><b>Welcome to the Qchat</b></p>
+		<br>
+		<br>
 
-    <p>Welcome to the Qchat</p>
-	<br>
-	<br>
-
-	<center>
-		<div class="receive chat"></div>	
-		<div class="send chat"></div>
-		<img src="http://loremflickr.com/200/300" />
+	
+		<form>
+			<div class="receive chat"></div>	
+			<div class="send chat">
+			<input type="text" class="form-control" name="message" id="msj" placeholder="especta o participa">
+			</div>
+			<br>
+			<img src="http://loremflickr.com/200/300" />
+		</form>
 	</center>
 
 	<bottom>
@@ -51,16 +56,25 @@ def styles():
 	.send{
 		margin-top: 10px;
 		width: 300px;
-		height: 100px;
+		height: 50px;
 		background-color: white;
 	}
     
 	.chat{
-		border-top: 7px;
-		border-left: 7px;
-		border-right: 7px;
-		border-bottom:7px;
-		border-color: green;
+		border: 5px solid;
+		border-radius: 5px;		
+		border-color: #01A9DB;
+	}
+	
+	input{
+		border:none;
+		height:50;
+		width:300px;	
+	}
+	
+
+	input:focus{
+		border-color:#424242;
 	}
     """
 
